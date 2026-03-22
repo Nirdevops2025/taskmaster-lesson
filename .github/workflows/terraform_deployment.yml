@@ -18,6 +18,11 @@ jobs:
       - uses: hashicorp/setup-terraform@v4
         with:
           terraform_version: "1.14.4"
-      - name: debug-step2
+        
+      - name: terraform-init-plan 
         run: |
-          terraform --version
+          export AWS_ACCESS_KEY_ID=${{ secrets.NIR_AWS_KEY }}
+          export AWS_SECRET_ACCESS_KEY=${{ secrets.NIR_AWS_SECRET_KEY }}
+          export AWS_REGION=us-east-1
+          terraform init
+          terraform plan
