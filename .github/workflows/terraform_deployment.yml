@@ -1,11 +1,26 @@
-name: nir_terraform_deployment
 
-on:
+name: Terraform deployment
+on: 
   push:
     branches:
       - main
+
 jobs:
-    ech_print:
-     runs-on: ubuntu-latest
+  echo_hello_world:
+    runs-on: ubuntu-latest
     steps:
-      
+      - name: First step
+        run: |
+          ls -al
+          echo '###############################'
+          pwd
+          echo '###############################'
+      - name: Check code
+        uses: actions/checkout@v4.3.1
+        
+      - name: Third step
+        run: |
+          ls -al
+          echo '###############################'
+          pwd
+          echo '###############################'
