@@ -1,0 +1,10 @@
+on:
+  push:
+    branches:
+      - main
+
+workflows:
+  my-workflow:
+    triggers:
+      push:
+        - branch: "main"
