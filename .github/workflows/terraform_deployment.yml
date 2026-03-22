@@ -1,4 +1,3 @@
-
 name: Terraform deployment
 on: 
   push:
@@ -9,22 +8,16 @@ jobs:
   echo_hello_world:
     runs-on: ubuntu-latest
     steps:
-      - name: First step
-        run: |
-          ls -al
-          echo '###############################'
-          pwd
-          echo '###############################'
       - name: Check code
-        uses: actions/checkout@v4.3.1
+        uses: actions/checkout@v4
         
-      - name: Third step
+      - name: debug-step
+        continue-on-error: true
         run: |
-          ls -al
-          echo '###############################'
-          pwd
-          echo '###############################'
-
+          terraform --version 
       - uses: hashicorp/setup-terraform@v4
         with:
           terraform_version: "1.14.4"
+      - name: debug-step2
+        run: |
+          terraform --version
