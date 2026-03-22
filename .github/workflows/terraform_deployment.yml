@@ -4,5 +4,8 @@ on:
   push:
     branches:
       - main
-
-      n"
+jobs:
+    ech_print:
+     runs-on: ubuntu-latest
+    steps:
+      
