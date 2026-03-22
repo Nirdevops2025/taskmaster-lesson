@@ -9,3 +9,4 @@ __pycache__/
 *.tfvars
 .idea/
 *
+*.terraform.lock.hcl
