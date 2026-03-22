@@ -1,0 +1,8 @@
+name: nir_terraform_deployment
+
+on:
+  push:
+    branches:
+      - main
+
+      n"
